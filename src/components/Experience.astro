@@ -7,9 +7,16 @@ import CssIcon from "../components/Icons/CssIcon.astro";
 import GitIcon from "../components/Icons/GitIcon.astro"
 ---
 <div class="w-auto p-5 mb-4 rounded-lg bg-white/5 ">
-    <header class="inline-flex items-center gap-3">
-        <BriefcaseIcon />
-        <time class="text-xl font-semibold dark:text-white">Agosto de 2022 - Actualmente</time>
+    <header class="flex flex-col  gap-3">
+        <div class="inline-flex gap-3">
+            <BriefcaseIcon />
+            <time class="text-xl font-semibold dark:text-white">Agosto de 2022 - Actualmente</time>
+        </div>
+        <div class="inline-flex gap-3 items-center pl-5"> 
+            🏢
+            <time class="text-sm font-semibold dark:text-white">Aguas Kpital Cúcuta S.A E.S.P.</time>
+        </div>
+        
     </header>
     
     <ol class="mt-3 divide-y divide-yellow-300 ">
@@ -17,9 +24,20 @@ import GitIcon from "../components/Icons/GitIcon.astro"
                 <div class="dark:text-gray-400">
                     <p class="text-pretty " >
                      <span class="text-cyan-500 font-black text-xl">Desarrollo frontend</span>   
-                      Experiencia en diseño web para aplicaciones SpringBoot, incluyendo diseño responsive.
-                      Creación de landing pages innovadoras en espacios tridimensionales. 
-                      Construcción de servicios con Node y envío de notificaciones mediante web-push.                     
+                   <ul class="list-disc ml-4">
+                    <li>
+                        Desarrollé aplicaciones web usando Angular (17) implementando arquitectura limpia.
+                    </li>
+                    <li>
+                       Trabajé en equipos ayudando en la transformación de maquetaciones web estándar en experiencias digitales avanzadas y responsive.
+                    </li>
+                    <li>
+                        Implementé soluciones creativas comunicándome con web services asegurando una integración funcional con el backend.
+                    </li>
+                     <li>
+                         Desarrollé landing pages integradas en entornos tridimensionales, asegurando siempre una interfaz atractiva y funcional.
+                    </li>
+                   </ul>
                     </p>
                     <span class="inline-flex gap-2 items-center 
                                   font-normal text-gray-500
@@ -34,10 +52,21 @@ import GitIcon from "../components/Icons/GitIcon.astro"
         <li>
             <div class="dark:text-gray-400 py-2">
                 <p class="text-pretty " >
-                 <span class="text-cyan-500 font-black text-xl">Desarrollo backend</span>   
-                 Desarrollo servicios y controladores en aplicaciones Spring Boot, 
-                 integración de APIs, gestión de versiones con GIT y despliegue de 
-                 aplicaciones en servidores Apache.
+                 <span class="text-cyan-500 font-black text-xl">Desarrollo backend</span>  
+                 <ul class="list-disc ml-4">
+                    <li>
+                        Desarrollé servicios y controladores en aplicaciones SpringBoot.
+                    </li>
+                    <li>
+                        Integré el consumo de APIs y servicios.
+                    </li>
+                    <li>
+                      Controlé cada cambio con versionamiento en GIT y despliegue de aplicaciones en servidores Apache.
+                    </li>
+                    <li>
+                       Construí servicios con Node.js, utilizando web-push para la gestión eficiente del envío de notificaciones, mejorando la interactividad con el usuario.
+                    </li>
+                   </ul>
                 </p>
                 <span class="inline-flex gap-2 items-center 
                              text-xs font-normal text-gray-500

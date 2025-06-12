@@ -1,87 +1,104 @@
 ---
-import AngularIcon from '../components/Icons/AngularIcon.astro'
-import FirebaseIcon from '../components/Icons/FirebaseIcon.astro'
-import ArrowIcon from '../components/Icons/ArrowIcon.astro'
+import AngularIcon from "../components/Icons/AngularIcon.astro";
+import FirebaseIcon from "../components/Icons/FirebaseIcon.astro";
+import ArrowIcon from "../components/Icons/ArrowIcon.astro";
 
-
-const ICONOS ={
-    ANGULAR:{
+const ICONOS = {
+    ANGULAR: {
         nombre: "Angular",
         icon: AngularIcon,
-        icon2:"",
+        icon2: "",
     },
-    FIREBASE:{
+    FIREBASE: {
         nombre: "Firebase",
         icon: FirebaseIcon,
-        icon2:"",
+        icon2: "",
     },
-    AFRAME:{
+    AFRAME: {
         nombre: "",
         icon: "/img/aframe.png",
-        icon2:"/img/aframe.png",
-
-    }
-}
+        icon2: "/img/aframe.png",
+    },
+};
 
 const PROJECTS = [
     {
-        titulo: "Finca San Pablo UFPS", 
-        descripcion: "Producto de software usado para la administración de la finca",
+        titulo: "Finca San Pablo UFPS",
+        descripcion:
+            "Producto de software usado para la administración de la finca",
         url: "https://angula-firebase-1f43d.web.app/login",
         imagen: "/img/finca.png",
-        iconos: [ICONOS.ANGULAR, ICONOS.FIREBASE  ],
-       
+        iconos: [ICONOS.ANGULAR, ICONOS.FIREBASE],
     },
     {
-        titulo: "Catalogo Innova", 
+        titulo: "Catalogo Innova",
         descripcion: "Catalogo web para visualizar emprendimientos",
         url: "https://innova-ufps-901d6.web.app/",
         imagen: "/img/catalogo.png",
-        iconos: [ICONOS.ANGULAR,  ICONOS.FIREBASE],
+        iconos: [ICONOS.ANGULAR, ICONOS.FIREBASE],
     },
     {
-        titulo: "Realidad virtual", 
+        titulo: "Realidad virtual",
         descripcion: "Desarrollo web que emula un espacio tridimensional",
         url: "https://edisonygomez.github.io/ejemplo-Aframe/",
         imagen: "/img/realidadV.png",
-        iconos: [ICONOS.AFRAME ],
-    }
-]
+        iconos: [ICONOS.AFRAME],
+    },
+    {
+        titulo: "Portal Rick And Morty",
+        descripcion:
+            "Gestión del Api de Rick and Morty, agregar favotitos y filtrar personajes",
+        url: "https://prueba-pulzo.web.app/home",
+        imagen: "/img/rick-morty.png",
+        iconos: [ICONOS.ANGULAR, ICONOS.FIREBASE],
+    },
+];
 ---
-{
-PROJECTS.map(({titulo, descripcion, url, imagen, iconos}) =>(
 
-<article class="rounded-2xl w-72 h-fit
+{
+    PROJECTS.map(({ titulo, descripcion, url, imagen, iconos }) => (
+        <article
+            class="rounded-2xl w-72 h-fit
                bg-slate-700 p-2 m-2 text-left 
                 hover:-translate-y-1 transition-all ease-linear
-              hover:bg-slate-600 hover:shadow-[0_4px_6px_-1px_#06b6d4]	 ">
-    <img src={imagen} alt={`captura del proyecto ${imagen}`} 
-         class="rounded-tl-lg rounded-tr-lg h-40"/>
-    <h3 class="text-yellow-200 mt-3"><strong>{titulo}</strong></h3>
-    <p>{descripcion}</p>
-    <nav class="flex  gap-2 flex-row ">
-        { 
-        iconos.map((ico)=>(
-          <span class="flex 
-             rounded-md p-1 bg-slate-900 border-slate-400 w-fit  mt-2">
-            <ico.icon/>
-            {ico.nombre}
-            <img src={ico.icon2} class="img-aframe" alt="">
-            </span> 
-        ))}   
-     
-    </nav>
-    <a href={url} target="_blank"
-       rel="noopener noreferrer"
-       class="bg-white/10 w-fit p-1 mt-1 border-b-2 
+              hover:bg-slate-600 hover:shadow-[0_4px_6px_-1px_#06b6d4]	 "
+        >
+            <div class="ff w-full relative mx-auto h-auto overflow-hidden rounded-lg ">
+                <img
+                src={imagen}
+                alt={`captura del proyecto ${imagen}`}
+                class="rounded-tl-lg rounded-tr-lg h-40 w-full
+                       transition-all duration-300 hover:scale-110"
+                 />
+            </div>
+            
+            <h3 class="text-yellow-200 mt-3">
+                <strong>{titulo}</strong>
+            </h3>
+            <p>{descripcion}</p>
+            <nav class="flex  gap-2 flex-row ">
+                {iconos.map((ico) => (
+                    <span
+                        class="flex 
+             rounded-md p-1 bg-slate-900 border-slate-400 w-fit  mt-2"
+                    >
+                        <ico.icon />
+                        {ico.nombre}
+                        <img src={ico.icon2} class="img-aframe" alt="" />
+                    </span>
+                ))}
+            </nav>
+            <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-white/10 w-fit p-1 mt-1 border-b-2 
                 rounded-xl flex gap-x-2 items-center
                 hover:scale-105 hover:bg-white/20 transition ease-linear
-                hover:font-bold ">
-              <strong>Visitar</strong>   <ArrowIcon/>
-    </a>
-</article>
-
-
-))
-
+                hover:font-bold "
+            >
+                <strong>Visitar</strong> <ArrowIcon />
+            </a>
+        </article>
+    ))
 }
