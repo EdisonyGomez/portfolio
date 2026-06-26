@@ -1,9 +1,60 @@
-<header 
-        class="flex justify-center  w-full xl:w-[1120] 
-                  sticky top-0 z-10 bg-[#121212]"   > 
-    <nav class="flex flex-row gap-x-7  top-0 p-5 ">
-        <a href="#yo">Sobre mi</a>
-        <a href="#experiencia">Experiencia</a>
-        <a href="#proyectos">Proyectos</a>
-    </nav>
-</header>  
+<header class="header-glass">
+  <nav class="header-nav">
+    <a class="nav-link" href="#yo">Sobre mí</a>
+    <a class="nav-link" href="#experiencia">Experiencia</a>
+    <a class="nav-link" href="#proyectos">Proyectos</a>
+  </nav>
+</header>
+
+<style>
+  .header-glass {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: rgba(8, 12, 20, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 1px 24px rgba(0, 0, 0, 0.4);
+  }
+
+  .header-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .nav-link {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #94a3b8;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    position: relative;
+    transition: color 0.2s ease;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, #6366f1, #06b6d4);
+    border-radius: 2px;
+    transition: width 0.25s ease;
+  }
+
+  .nav-link:hover {
+    color: #e2e8f0;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+</style>

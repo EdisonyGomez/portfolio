@@ -1,84 +1,391 @@
 ---
-import JsIcon from "../components/Icons/JsIcon.astro";
-import SpringIcon from "../components/Icons/Spring.astro";
-import BriefcaseIcon from "../components/Icons/BriefcaseIcon.astro";
-import HtmlIcon from "../components/Icons/HtmlIcon.astro";
-import CssIcon from "../components/Icons/CssIcon.astro";
-import GitIcon from "../components/Icons/GitIcon.astro"
+import NestIcon from "./Icons/NestIcon.astro";
+import OracleIcon from "./Icons/OracleIcon.astro";
+import AzureIcon from "./Icons/AzureIcon.astro";
+import TsIcon from "./Icons/TsIcon.astro";
+import AngularIcon from "./Icons/AngularIcon.astro";
+import GitIcon from "./Icons/GitIcon.astro";
+import JsIcon from "./Icons/JsIcon.astro";
+import SpringIcon from "./Icons/Spring.astro";
+import HtmlIcon from "./Icons/HtmlIcon.astro";
+import CssIcon from "./Icons/CssIcon.astro";
 ---
-<div class="w-auto p-5 mb-4 rounded-lg bg-white/5 ">
-    <header class="flex flex-col  gap-3">
-        <div class="inline-flex gap-3">
-            <BriefcaseIcon />
-            <time class="text-xl font-semibold dark:text-white">Agosto de 2022 - Actualmente</time>
-        </div>
-        <div class="inline-flex gap-3 items-center pl-5"> 
-            🏢
-            <time class="text-sm font-semibold dark:text-white">Aguas Kpital Cúcuta S.A E.S.P.</time>
-        </div>
-        
-    </header>
-    
-    <ol class="mt-3 divide-y divide-yellow-300 ">
-        <li>
-                <div class="dark:text-gray-400">
-                    <p class="text-pretty " >
-                     <span class="text-cyan-500 font-black text-xl">Desarrollo frontend</span>   
-                   <ul class="list-disc ml-4">
-                    <li>
-                        Desarrollé aplicaciones web usando Angular (17) implementando arquitectura limpia.
-                    </li>
-                    <li>
-                       Trabajé en equipos ayudando en la transformación de maquetaciones web estándar en experiencias digitales avanzadas y responsive.
-                    </li>
-                    <li>
-                        Implementé soluciones creativas comunicándome con web services asegurando una integración funcional con el backend.
-                    </li>
-                     <li>
-                         Desarrollé landing pages integradas en entornos tridimensionales, asegurando siempre una interfaz atractiva y funcional.
-                    </li>
-                   </ul>
-                    </p>
-                    <span class="inline-flex gap-2 items-center 
-                                  font-normal text-gray-500
-                                 dark:text-gray-400 pt-2">
-                       <HtmlIcon class="size-7 opacity-90" />
-                       <CssIcon class="size-7 opacity-90" />
-                       <JsIcon class="size-7 opacity-90" />
-                    </span> 
-                </div>
-        </li>
 
-        <li>
-            <div class="dark:text-gray-400 py-2">
-                <p class="text-pretty " >
-                 <span class="text-cyan-500 font-black text-xl">Desarrollo backend</span>  
-                 <ul class="list-disc ml-4">
-                    <li>
-                        Desarrollé servicios y controladores en aplicaciones SpringBoot.
-                    </li>
-                    <li>
-                        Integré el consumo de APIs y servicios.
-                    </li>
-                    <li>
-                      Controlé cada cambio con versionamiento en GIT y despliegue de aplicaciones en servidores Apache.
-                    </li>
-                    <li>
-                       Construí servicios con Node.js, utilizando web-push para la gestión eficiente del envío de notificaciones, mejorando la interactividad con el usuario.
-                    </li>
-                   </ul>
-                </p>
-                <span class="inline-flex gap-2 items-center 
-                             text-xs font-normal text-gray-500
-                           dark:text-gray-400 pt-2">
-                   <SpringIcon class="size-5" />
-                   <GitIcon class="size-5" />
-                   <JsIcon class="size-5" />
-                </span> 
-            </div>
-    </li>
-    
-    </ol>
+<div class="timeline">
+
+  <!-- ── SQDM (current) ── -->
+  <div class="timeline-item">
+    <div class="timeline-marker current">
+      <span class="pulse-ring"></span>
+      <span class="pulse-dot"></span>
+    </div>
+
+    <div class="exp-card glass tilt-card">
+      <div class="exp-card-glow"></div>
+
+      <div class="exp-header">
+        <div class="exp-meta">
+          <span class="exp-badge current-badge">Actual</span>
+          <time class="exp-period">Febrero 2026 – Presente</time>
+        </div>
+        <div class="exp-company">
+          <span class="company-icon">🏢</span>
+          <strong class="company-name">SQDM</strong>
+        </div>
+        <h3 class="exp-role">Software Developer</h3>
+      </div>
+
+      <div class="exp-body">
+
+        <div class="exp-section">
+          <span class="exp-section-title frontend">Frontend</span>
+          <ul class="exp-list">
+            <li>Desarrollo de aplicaciones empresariales con <strong>Angular 17 & 18</strong>, implementando arquitectura limpia y patrones escalables.</li>
+            <li>Integración de interfaces con múltiples servicios backend y APIs REST.</li>
+          </ul>
+          <div class="chip-row">
+            <span class="tech-chip"><AngularIcon class="size-3.5" /> Angular 17 & 18</span>
+            <span class="tech-chip"><TsIcon class="size-3.5" /> TypeScript</span>
+          </div>
+        </div>
+
+        <div class="exp-section">
+          <span class="exp-section-title backend">Backend & Datos</span>
+          <ul class="exp-list">
+            <li>Diseño y desarrollo de <strong>microservicios con NestJS</strong>, aplicando principios SOLID y arquitectura modular.</li>
+            <li>Gestión avanzada de <strong>bases de datos Oracle</strong>: consultas complejas, procedimientos almacenados y optimización de performance.</li>
+            <li>Administración y configuración de <strong>servidores SFTP</strong> para transferencia segura de archivos.</li>
+            <li>Creación de <strong>automatizaciones</strong> para mejorar la productividad del equipo y reducir procesos manuales.</li>
+          </ul>
+          <div class="chip-row">
+            <span class="tech-chip"><NestIcon class="size-3.5" /> NestJS</span>
+            <span class="tech-chip"><OracleIcon class="size-3.5" /> Oracle DB</span>
+            <span class="tech-chip"><JsIcon class="size-3.5" /> Node.js</span>
+          </div>
+        </div>
+
+        <div class="exp-section">
+          <span class="exp-section-title devops">DevOps & Cloud</span>
+          <ul class="exp-list">
+            <li>Gestión de flujos de trabajo en <strong>Azure DevOps</strong>: boards, repositorios y revisión de código.</li>
+            <li>Configuración y ejecución de <strong>pipelines CI/CD</strong> para automatizar build, test y deploy.</li>
+            <li>Despliegue y administración de aplicaciones en <strong>Azure</strong> (App Services, configuración de entornos).</li>
+          </ul>
+          <div class="chip-row">
+            <span class="tech-chip"><AzureIcon class="size-3.5" /> Azure</span>
+            <span class="tech-chip"><GitIcon class="size-3.5" /> Git</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Aguas Kpital ── -->
+  <div class="timeline-item">
+    <div class="timeline-marker past">
+      <span class="past-dot"></span>
+    </div>
+
+    <div class="exp-card glass tilt-card">
+      <div class="exp-header">
+        <div class="exp-meta">
+          <time class="exp-period">Agosto 2022 – Febrero 2026</time>
+        </div>
+        <div class="exp-company">
+          <span class="company-icon">🏢</span>
+          <strong class="company-name">Aguas Kpital Cúcuta S.A E.S.P.</strong>
+        </div>
+        <h3 class="exp-role">Developer</h3>
+      </div>
+
+      <div class="exp-body">
+
+        <div class="exp-section">
+          <span class="exp-section-title frontend">Frontend</span>
+          <ul class="exp-list">
+            <li>Desarrollé aplicaciones web con <strong>Angular (17)</strong> implementando arquitectura limpia y diseño responsive.</li>
+            <li>Transformé maquetaciones estándar en experiencias digitales avanzadas trabajando en equipo.</li>
+            <li>Desarrollé <strong>landing pages integradas en entornos tridimensionales</strong>, asegurando interfaces atractivas y funcionales.</li>
+            <li>Integración con web services garantizando comunicación fluida entre frontend y backend.</li>
+          </ul>
+          <div class="chip-row">
+            <span class="tech-chip"><AngularIcon class="size-3.5" /> Angular</span>
+            <span class="tech-chip"><HtmlIcon class="size-3.5" /> HTML</span>
+            <span class="tech-chip"><CssIcon class="size-3.5" /> CSS</span>
+            <span class="tech-chip"><JsIcon class="size-3.5" /> JavaScript</span>
+          </div>
+        </div>
+
+        <div class="exp-section">
+          <span class="exp-section-title backend">Backend</span>
+          <ul class="exp-list">
+            <li>Desarrollé servicios y controladores en aplicaciones <strong>Spring Boot</strong>.</li>
+            <li>Construí servicios con <strong>Node.js</strong> utilizando web-push para gestión de notificaciones en tiempo real.</li>
+            <li>Integración y consumo de APIs externas e internas.</li>
+            <li>Versionamiento con <strong>Git</strong> y despliegue de aplicaciones en servidores Apache.</li>
+          </ul>
+          <div class="chip-row">
+            <span class="tech-chip"><SpringIcon class="size-3.5" /> Spring Boot</span>
+            <span class="tech-chip"><JsIcon class="size-3.5" /> Node.js</span>
+            <span class="tech-chip"><GitIcon class="size-3.5" /> Git</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
 </div>
 
-  
+<style>
+  /* ── Timeline container ── */
+  .timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-left: 1.75rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0.45rem;
+    top: 0.75rem;
+    bottom: 0.75rem;
+    width: 2px;
+    background: linear-gradient(
+      180deg,
+      #6366f1 0%,
+      rgba(99, 102, 241, 0.4) 50%,
+      rgba(99, 102, 241, 0.1) 100%
+    );
+    border-radius: 2px;
+  }
+
+  /* ── Timeline markers ── */
+  .timeline-marker {
+    position: absolute;
+    left: -1.35rem;
+    top: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .timeline-item {
+    position: relative;
+  }
+
+  /* Current job — pulsing */
+  .pulse-dot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #6366f1;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #6366f1;
+    z-index: 2;
+  }
+
+  .pulse-ring {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: transparent;
+    border: 2px solid #6366f1;
+    border-radius: 50%;
+    animation: pulse-ring 1.8s ease-out infinite;
+  }
+
+  @keyframes pulse-ring {
+    0%   { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(2.5); opacity: 0; }
+  }
+
+  /* Past job — static */
+  .past-dot {
+    width: 10px;
+    height: 10px;
+    background: #334155;
+    border: 2px solid #475569;
+    border-radius: 50%;
+  }
+
+  /* ── Experience card ── */
+  .exp-card {
+    position: relative;
+    overflow: hidden;
+    padding: 1.5rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .exp-card:hover {
+    box-shadow:
+      0 0 0 1px rgba(99,102,241,0.2),
+      0 20px 60px rgba(0,0,0,0.5),
+      0 0 40px rgba(99,102,241,0.1);
+  }
+
+  /* Top glow line (current only) */
+  .exp-card-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #6366f1, #06b6d4, transparent);
+    border-radius: 14px 14px 0 0;
+  }
+
+  /* ── Card header ── */
+  .exp-header {
+    margin-bottom: 1.25rem;
+  }
+
+  .exp-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .current-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 20px;
+    background: rgba(99, 102, 241, 0.15);
+    border: 1px solid rgba(99, 102, 241, 0.35);
+    color: #818cf8;
+  }
+
+  .exp-period {
+    font-size: 0.8rem;
+    color: #64748b;
+    font-weight: 500;
+  }
+
+  .exp-company {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .company-icon { font-size: 1rem; }
+
+  .company-name {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    font-weight: 600;
+  }
+
+  .exp-role {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin-top: 0.15rem;
+  }
+
+  /* ── Body sections ── */
+  .exp-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .exp-section {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 0.85rem;
+  }
+
+  .exp-section-title {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 10px;
+    border-radius: 20px;
+    margin-bottom: 0.6rem;
+  }
+
+  .exp-section-title.frontend {
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    color: #818cf8;
+  }
+
+  .exp-section-title.backend {
+    background: rgba(6, 182, 212, 0.1);
+    border: 1px solid rgba(6, 182, 212, 0.25);
+    color: #22d3ee;
+  }
+
+  .exp-section-title.devops {
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.25);
+    color: #fbbf24;
+  }
+
+  .exp-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .exp-list li {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    line-height: 1.55;
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .exp-list li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: #6366f1;
+    font-weight: 700;
+  }
+
+  .exp-list strong {
+    color: #e2e8f0;
+    font-weight: 600;
+  }
+
+  .chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.25rem;
+  }
+</style>
+
+<script>
+  // 3D tilt effect on experience cards
+  document.querySelectorAll<HTMLElement>('.tilt-card').forEach(card => {
+    card.addEventListener('mousemove', (e: MouseEvent) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const cx = rect.width / 2;
+      const cy = rect.height / 2;
+      const rx = ((y - cy) / cy) * -6;
+      const ry = ((x - cx) / cx) * 6;
+      card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(6px)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
+    });
+  });
+</script>

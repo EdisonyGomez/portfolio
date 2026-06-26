@@ -8,76 +8,141 @@ import Section from '../components/Section.astro';
 import PcIcon from "../components/Icons/PcIcon.astro";
 import CodeIcon from "../components/Icons/CodeIcon.astro";
 import PhoneIcon from "../components/Icons/PhoneIcon.astro";
-
-
 import Experience from '../components/Experience.astro';
 import Projects from '../components/Projects.astro';
-
-
 ---
 
-<Layout 
-	title="Portfolio de Yesid Gomez - Desarrollador y Programador web">
-	<main class="p-4" >
-		<Section id="yo">
-			<div class="shape">
-				<img class="rounded-[31%_69%_23%_77%_/_66%_18%_82%_34%] w-60 h-60" src="logo.jpg" alt="Foto de perfil">
-			</div>
-			<h1 class="text-5xl font-bold pb-4 drop-shadow-[0_0px_0.75rem_#dca714]">Yesid Gomez</h1>
-			<h2 class="text-xl opacity-80 max-w-lg text-pretty py-4">
-			 <strong class="text-yellow-200"> 3 años de experiencia </strong>	 
-			 como desarrollador de software creando soluciones innovadoras.
-			</h2>
-		
-				
-			<nav class="flex gap-x-2 flex-wrap">
-				<SocialPill mailto:  href="mailto:yezid16@gmail.com">
-					<GmailIcon class="size-9"/>	
-					yezid16@gmail.com			
-				</SocialPill>
-				<SocialPill mailto:  href="callto:+573144139628">
-					<PhoneIcon />
-					 +57 3144139628		
-				</SocialPill>
-				<SocialPill href="https://www.linkedin.com/in/edinsondev/">
-					<LinkedlnIcon class="size-9"/>
-					Linkedln
-				</SocialPill>
-				<SocialPill  href="https://github.com/EdisonyGomez">
-					<GithubIcon class="size-9"/>	
-					Github			
-				</SocialPill>
-				
-				
-			</nav>			
-		</Section>
+<Layout title="Portfolio de Yesid Gomez — Software Developer">
+  <main class="p-4">
 
-		<Section id="experiencia">
-			<h2 class="text-3xl font-semibold text-left
-					   w-full pb-3 flex items-center gap-2 ">
-					<PcIcon></PcIcon>
-					Experiencia laboral
-			</h2>
-			<Experience/>
-		</Section>
+    <!-- ── Hero ── -->
+    <Section id="yo">
+      <div class="hero">
 
-		<Section id="proyectos">
-			<h2 class="text-3xl font-semibold text-left
-					   w-full pb-3 flex items-center gap-2 ">
-					<CodeIcon  ></CodeIcon>
-					Proyectos
-			</h2>
-			<div class="flex flex-col  justify-center lg:flex-row w-auto flex-wrap">
-				<Projects >
-				</Projects>
-			</div>
-			
+        <div class="hero-visual float">
+          <div class="shape">
+            <img
+              class="rounded-[31%_69%_23%_77%_/_66%_18%_82%_34%] w-60 h-60"
+              src="logo.jpg"
+              alt="Foto de perfil de Yesid Gomez"
+            />
+          </div>
+        </div>
 
-		</Section>
-		
-	</main>
+        <div class="hero-text">
+          <p class="hero-label">👋 Hola, soy</p>
+          <h1 class="hero-name">Yesid Gomez</h1>
+          <h2 class="hero-subtitle">
+            <span class="text-gradient font-black">4 años de experiencia</span>
+            {" "}como software developer creando soluciones innovadoras.
+          </h2>
+
+          <nav class="hero-nav">
+            <SocialPill href="mailto:yezid16@gmail.com">
+              <GmailIcon class="size-5" />
+              yezid16@gmail.com
+            </SocialPill>
+            <SocialPill href="callto:+573144139628">
+              <PhoneIcon />
+              +57 3144139628
+            </SocialPill>
+            <SocialPill href="https://www.linkedin.com/in/edinsondev/">
+              <LinkedlnIcon class="size-5" />
+              LinkedIn
+            </SocialPill>
+            <SocialPill href="https://github.com/EdisonyGomez">
+              <GithubIcon class="size-5" />
+              Github
+            </SocialPill>
+          </nav>
+        </div>
+
+      </div>
+    </Section>
+
+    <!-- ── Experiencia ── -->
+    <Section id="experiencia">
+      <h2 class="section-title">
+        <PcIcon />
+        Experiencia laboral
+      </h2>
+      <Experience />
+    </Section>
+
+    <!-- ── Proyectos ── -->
+    <Section id="proyectos">
+      <h2 class="section-title">
+        <CodeIcon />
+        Proyectos
+      </h2>
+      <Projects />
+    </Section>
+
+  </main>
 </Layout>
 
 <style>
-	
+  /* ── Hero layout ── */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+    padding: 2rem 0 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .hero {
+      flex-direction: row;
+      align-items: center;
+      text-align: left;
+      gap: 3rem;
+    }
+  }
+
+  .hero-visual {
+    flex-shrink: 0;
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 480px;
+  }
+
+  .hero-label {
+    font-size: 0.9rem;
+    color: #64748b;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  .hero-name {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.05;
+    color: #e2e8f0;
+    filter: drop-shadow(0 0 20px rgba(99, 102, 241, 0.35));
+  }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    max-width: 400px;
+  }
+
+  .hero-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    justify-content: center;
+  }
+
+  @media (min-width: 768px) {
+    .hero-nav { justify-content: flex-start; }
+  }
 </style>

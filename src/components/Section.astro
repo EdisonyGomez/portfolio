@@ -1,8 +1,15 @@
 ---
-const {id:id } = Astro.props
+const { id } = Astro.props;
 ---
-<section id={id} 
-        class=" max-w-screen-sm mx-auto py-10 
-              flex flex-col items-center  ">
-    <slot />
+<section id={id} class="section-wrapper">
+  <slot />
 </section>
+
+<style>
+  .section-wrapper {
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3rem 0;
+  }
+</style>

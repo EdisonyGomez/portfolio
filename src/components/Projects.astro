@@ -4,101 +4,241 @@ import FirebaseIcon from "../components/Icons/FirebaseIcon.astro";
 import ArrowIcon from "../components/Icons/ArrowIcon.astro";
 
 const ICONOS = {
-    ANGULAR: {
-        nombre: "Angular",
-        icon: AngularIcon,
-        icon2: "",
-    },
-    FIREBASE: {
-        nombre: "Firebase",
-        icon: FirebaseIcon,
-        icon2: "",
-    },
-    AFRAME: {
-        nombre: "",
-        icon: "/img/aframe.png",
-        icon2: "/img/aframe.png",
-    },
+  ANGULAR: { nombre: "Angular",  icon: AngularIcon,  img: "" },
+  FIREBASE: { nombre: "Firebase", icon: FirebaseIcon, img: "" },
+  AFRAME:   { nombre: "A-Frame",  icon: null,         img: "/img/aframe.png" },
 };
 
 const PROJECTS = [
-    {
-        titulo: "Finca San Pablo UFPS",
-        descripcion:
-            "Producto de software usado para la administración de la finca",
-        url: "https://angula-firebase-1f43d.web.app/login",
-        imagen: "/img/finca.png",
-        iconos: [ICONOS.ANGULAR, ICONOS.FIREBASE],
-    },
-    {
-        titulo: "Catalogo Innova",
-        descripcion: "Catalogo web para visualizar emprendimientos",
-        url: "https://innova-ufps-901d6.web.app/",
-        imagen: "/img/catalogo.png",
-        iconos: [ICONOS.ANGULAR, ICONOS.FIREBASE],
-    },
-    {
-        titulo: "Realidad virtual",
-        descripcion: "Desarrollo web que emula un espacio tridimensional",
-        url: "https://edisonygomez.github.io/ejemplo-Aframe/",
-        imagen: "/img/realidadV.png",
-        iconos: [ICONOS.AFRAME],
-    },
-    {
-        titulo: "Portal Rick And Morty",
-        descripcion:
-            "Gestión del Api de Rick and Morty, agregar favotitos y filtrar personajes",
-        url: "https://prueba-pulzo.web.app/home",
-        imagen: "/img/rick-morty.png",
-        iconos: [ICONOS.ANGULAR, ICONOS.FIREBASE],
-    },
+  {
+    titulo: "Finca San Pablo UFPS",
+    descripcion: "Sistema de administración para la finca universitaria.",
+    url: "https://angula-firebase-1f43d.web.app/login",
+    imagen: "/img/finca.png",
+    iconos: [ICONOS.ANGULAR, ICONOS.FIREBASE],
+  },
+  {
+    titulo: "Catálogo Innova",
+    descripcion: "Catálogo web para visualizar y explorar emprendimientos.",
+    url: "https://innova-ufps-901d6.web.app/",
+    imagen: "/img/catalogo.png",
+    iconos: [ICONOS.ANGULAR, ICONOS.FIREBASE],
+  },
+  {
+    titulo: "Realidad Virtual",
+    descripcion: "Desarrollo web que emula un espacio tridimensional interactivo.",
+    url: "https://edisonygomez.github.io/ejemplo-Aframe/",
+    imagen: "/img/realidadV.png",
+    iconos: [ICONOS.AFRAME],
+  },
+  {
+    titulo: "Portal Rick & Morty",
+    descripcion: "Gestión de la API de Rick and Morty con favoritos y filtros.",
+    url: "https://prueba-pulzo.web.app/home",
+    imagen: "/img/rick-morty.png",
+    iconos: [ICONOS.ANGULAR, ICONOS.FIREBASE],
+  },
 ];
 ---
 
-{
-    PROJECTS.map(({ titulo, descripcion, url, imagen, iconos }) => (
-        <article
-            class="rounded-2xl w-72 h-fit
-               bg-slate-700 p-2 m-2 text-left 
-                hover:-translate-y-1 transition-all ease-linear
-              hover:bg-slate-600 hover:shadow-[0_4px_6px_-1px_#06b6d4]	 "
+<div class="projects-grid">
+  {PROJECTS.map(({ titulo, descripcion, url, imagen, iconos }) => (
+    <article class="project-card glass">
+      <div class="card-glare" aria-hidden="true"></div>
+
+      <div class="card-img-wrap">
+        <img
+          src={imagen}
+          alt={`Captura del proyecto ${titulo}`}
+          class="card-img"
+          loading="lazy"
+        />
+        <div class="card-img-overlay"></div>
+      </div>
+
+      <div class="card-body">
+        <h3 class="card-title">{titulo}</h3>
+        <p class="card-desc">{descripcion}</p>
+
+        <nav class="card-chips">
+          {iconos.map((ico) => (
+            <span class="tech-chip">
+              {ico.icon ? <ico.icon class="size-3.5" /> : null}
+              {ico.img ? <img src={ico.img} class="img-aframe-small" alt={ico.nombre} /> : null}
+              {ico.nombre}
+            </span>
+          ))}
+        </nav>
+
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="card-link"
         >
-            <div class="ff w-full relative mx-auto h-auto overflow-hidden rounded-lg ">
-                <img
-                src={imagen}
-                alt={`captura del proyecto ${imagen}`}
-                class="rounded-tl-lg rounded-tr-lg h-40 w-full
-                       transition-all duration-300 hover:scale-110"
-                 />
-            </div>
-            
-            <h3 class="text-yellow-200 mt-3">
-                <strong>{titulo}</strong>
-            </h3>
-            <p>{descripcion}</p>
-            <nav class="flex  gap-2 flex-row ">
-                {iconos.map((ico) => (
-                    <span
-                        class="flex 
-             rounded-md p-1 bg-slate-900 border-slate-400 w-fit  mt-2"
-                    >
-                        <ico.icon />
-                        {ico.nombre}
-                        <img src={ico.icon2} class="img-aframe" alt="" />
-                    </span>
-                ))}
-            </nav>
-            <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="bg-white/10 w-fit p-1 mt-1 border-b-2 
-                rounded-xl flex gap-x-2 items-center
-                hover:scale-105 hover:bg-white/20 transition ease-linear
-                hover:font-bold "
-            >
-                <strong>Visitar</strong> <ArrowIcon />
-            </a>
-        </article>
-    ))
-}
+          <span>Ver proyecto</span>
+          <ArrowIcon />
+        </a>
+      </div>
+    </article>
+  ))}
+</div>
+
+<style>
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+    width: 100%;
+  }
+
+  .project-card {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transform-style: preserve-3d;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+    will-change: transform;
+    cursor: default;
+  }
+
+  .project-card:hover {
+    box-shadow:
+      0 0 0 1px rgba(99,102,241,0.25),
+      0 24px 64px rgba(0,0,0,0.55),
+      0 0 30px rgba(99,102,241,0.12);
+  }
+
+  /* Glare layer */
+  .card-glare {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at var(--mx, 50%) var(--my, 0%),
+      rgba(255,255,255,0.06) 0%,
+      transparent 60%
+    );
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    border-radius: inherit;
+  }
+
+  .project-card:hover .card-glare {
+    opacity: 1;
+  }
+
+  /* Image */
+  .card-img-wrap {
+    position: relative;
+    overflow: hidden;
+    height: 160px;
+  }
+
+  .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .project-card:hover .card-img {
+    transform: scale(1.05);
+  }
+
+  .card-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 50%,
+      rgba(8, 12, 20, 0.8) 100%
+    );
+  }
+
+  /* Body */
+  .card-body {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #e2e8f0;
+  }
+
+  .card-desc {
+    font-size: 0.8rem;
+    color: #64748b;
+    line-height: 1.5;
+  }
+
+  .card-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.25rem;
+  }
+
+  .card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: auto;
+    padding-top: 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #818cf8;
+    text-decoration: none;
+    transition: color 0.2s ease, gap 0.2s ease;
+  }
+
+  .card-link:hover {
+    color: #a5b4fc;
+    gap: 0.6rem;
+  }
+
+  .img-aframe-small {
+    height: 14px;
+    width: auto;
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.project-card').forEach(card => {
+    const glare = card.querySelector<HTMLElement>('.card-glare');
+
+    card.addEventListener('mousemove', (e: MouseEvent) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const cx = rect.width / 2;
+      const cy = rect.height / 2;
+
+      // Tilt
+      const rx = ((y - cy) / cy) * -8;
+      const ry = ((x - cx) / cx) * 8;
+      card.style.transform = `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(8px)`;
+
+      // Glare position
+      if (glare) {
+        const px = (x / rect.width) * 100;
+        const py = (y / rect.height) * 100;
+        glare.style.setProperty('--mx', `${px}%`);
+        glare.style.setProperty('--my', `${py}%`);
+      }
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
+    });
+  });
+</script>
