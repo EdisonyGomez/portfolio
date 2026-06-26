@@ -120,18 +120,25 @@ const { title } = Astro.props;
     background: linear-gradient(135deg, var(--accent) 0%, var(--cyan) 100%);
     animation: morph 8s ease-in-out infinite;
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    height: 250px;
-    width: 240px;
+    width: clamp(200px, 42vw, 260px);
+    aspect-ratio: 1 / 1;
+    padding: 4px;
     z-index: 5;
     box-shadow:
       0 0 40px var(--accent-glow),
       0 0 80px var(--cyan-glow),
       inset 0 1px 0 rgba(255,255,255,0.15);
-    transition: all 1s ease-in-out;
+    transition: border-radius 1s ease-in-out;
   }
 
-  .shape img {
-    border-radius: 50% 50% 49% 51% / 73% 66% 34% 27%;
+  .shape img,
+  .shape .avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: inherit;
+    background: linear-gradient(160deg, #f1f5f9 0%, #cbd5e1 100%);
   }
 
   @keyframes morph {
